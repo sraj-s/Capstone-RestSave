@@ -1,0 +1,465 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: magneta, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll !important;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.3rem;
+}
+
+p, li {
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    text-transform: uppercase;
+    width: 200px;
+    height: 40px;
+    background-color: rgb(211, 221, 64); 
+    border: 0; 
+    border-radius: 15px;
+    font-weight:bold;
+    float: left;
+    margin: 20px;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+button:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+table {
+    border-collapse: separate;
+    border-spacing: 2px;
+}
+
+
+
+header {
+    height: 50vh;
+    /* width: 100vw; */
+    /* padding-top: 10vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+header .navBar {
+    z-index: 10;
+    position: fixed;
+    height: 10vh;
+    top: 0;
+    width: 100vw;
+    min-width: 300px;
+    padding: 0 20vw;
+    background-color: rgb(169, 222, 243);
+    display: flex;
+    /*
+    justify-content: space-around;
+    */
+    color: white;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0px 0px 5px 5px rgb(169, 222, 243);
+    justify-content: flex-end;
+    margin-left: auto;
+
+}
+
+header .navBar.hide {
+    transform: translate(-100%);
+}
+
+header .navBar .navLink {
+    display: inline-block;
+    margin-left: 60px;
+
+}
+
+header .navBar .navLinkText {
+    font-size: 1.5rem;
+    text-align: center;
+    display: block;
+    white-space: nowrap;
+    color: white;
+    text-align: right;
+    float: right;
+    font-weight: 700;
+}
+
+header .navBar .navLinkText:hover {
+    opacity: .5;
+}
+/*
+ header .navBar .navLinkText:visited {
+    color:mediumaquamarine;
+} 
+*/
+header .navBar .navLogo {
+    position: absolute;
+    left: -2%;
+    background-color: white;
+    margin-top:2.5vh;
+    width: 13vh;
+    height: 13vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 5px 5px black;
+}
+
+header .navBar .navLogo img {
+    width: 80%;
+    margin-right: -3%;
+    height: auto;
+}
+
+header .navBar .navLogo img:hover {
+    opacity: .5;
+}
+
+header .contactUsButton {
+    right: 3%; 
+    position: absolute;
+    z-index: 3;
+    top: 20%;
+    width: 13vw;
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid white;
+    background-color: rgb(211, 221, 64);
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    text-transform: uppercase;
+    margin: 5px;
+}
+
+ header .contactUsButton .fa-envelope-open-text {
+    display: none;
+} 
+
+
+.banner {
+    width: 50%;
+    position: absolute;
+    top: 12%;
+    right: 12%;
+    color: white;
+    z-index: 1;
+}
+
+header .banner {
+    height: 50%;
+    width: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../RestSaveImages/FrontImages/Rest save.png");
+    background-color: black;
+}
+
+.banner button {
+    position: absolute;
+    top: 70%;
+    right: 12%;
+}
+
+
+
+.banner .newBannerLogo {
+    position: absolute;
+    left: -43%;
+    margin-top: -35vh;
+    width: 13vh;
+    height: 13vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .newBannerLogo img {
+    width: 80%;
+    margin-right: -5%;
+    height: auto;
+}
+
+.aboutRestsave {
+    text-align: center;
+
+    
+}
+
+.aboutRestsave .AboutContentInfo {
+    position:absolute;
+    top:28%;
+    left: 40%;
+    color:black;
+    z-index: 1;
+}
+.aboutRestsave h1 {
+    text-transform: uppercase;
+    color: rgb(141, 204, 89);
+    text-align: center;
+    font-style:normal;
+    font-size: 3rem;
+    margin-top: 9em;
+}
+.aboutRestsave h2 {
+    text-transform: uppercase;
+    color: rgb(141, 204, 89);
+    text-align: center;
+    font-style:normal;
+    font-size: 3rem;
+    margin-top: 8em;
+}
+.aboutRestsave p {
+    font-size:1.9rem;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+header .PostBanner {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../RestSaveImages/PagesImg/post.jpg");
+    background-color:black;
+}
+
+header .PostBanner .PostBannerContent {
+    position:absolute;
+    top:16%;
+    right:8%;
+    color:white;
+    z-index: 1;
+}
+
+.PostBanner h1 {
+    font-size: 3.2rem;
+}
+
+.PostBanner p {
+    font-size:1.9rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+
+
+.PostContent {
+    text-align: center;
+}
+
+.PostContent .PostBannerContentInfo {
+    position:absolute;
+    top:16%;
+    right:8%;
+    color:white;
+    z-index: 1;
+}
+.PostContent h1 {
+    text-transform: uppercase;
+    color: rgb(141, 204, 89);
+    text-align: center;
+    font-style:normal;
+    font-size: 3rem;
+    margin-top: 1em;
+}
+.PostContent p {
+    font-size:1.9rem;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+header .LocationBanner {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../RestSaveImages/PagesImg/Location.jpg");
+    background-color: black;
+}
+
+header .LocationBanner .LocationBannerContent {
+    position:absolute;
+    top:16%;
+    right:8%;
+    color:white;
+    z-index: 1;
+}
+
+.LocationBanner h1 {
+    font-size: 3.2rem;
+}
+
+.LocationBanner p {
+    font-size:1.9rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.LocationContent {
+    text-align: center;
+}
+
+.LocationContent .LocationBannerContentInfo {
+    position:absolute;
+    top:16%;
+    right:8%;
+    color:white;
+    z-index: 1;
+}
+.LocationContent h1 {
+    text-transform: uppercase;
+    color: rgb(141, 204, 89);
+    text-align: center;
+    font-style:normal;
+    font-size: 3rem;
+    margin-top: 1em;
+}
+.LocationContent p {
+    font-size:1.9rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+
+footer {
+    background-color: rgb(184, 182, 106);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 20vh;
+    min-height: 800px;
+    min-width: 300px;
+    clear: both;
+    position: relative;
+}
+
+footer .footerLogo {
+    width: 10%;
+    height: auto;
+}
+
+.contactUsForm h2 {
+    color: rgb(211, 221, 64);
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.contactUsForm h1 {
+    font-weight: 900;
+}
+
+.contactUsForm .submitBtn {
+    width: 200px;
+    height: 40px;
+    background-color: rgb(211, 221, 64); 
+    border: 0; 
+    border-radius: 15px; 
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+.contactUsForm .submitBtn:hover{
+    opacity: .5;
+    cursor: pointer;
+}
+footer .contactUsForm {
+    margin-top: 5vh;
+    text-align: center;
+    align-items: center;
+    width: 50%;
+}
+
+footer .socialMediaContainer {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+}
+
+footer .socialMediaContainer .iconBar {
+    display: flex;
+    flex-direction: row;
+    margin: 1vh 0;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+footer .contactUsForm input,select{
+    padding: 5px;
+    width: 40%;
+    height: 35px;
+    margin: 10px 2%;
+    align-items: center;
+    display: inline-block;
+    font-weight: 500;
+}
+
+footer .contactUsForm .input2{
+    width: 85%;
+}
+
+footer .contactUsForm textarea{
+    padding: 5px;
+    width: 85%;
+    height: 70px;
+    margin:10px 0;
+    align-items: center;
+}
+
+footer .socialMediaContainer .socialMediaIcon {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin-right: 1vw;
+    border-radius: 100%;
+    border: 1px white solid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+footer .socialMediaContainer .socialMediaIcon:hover {
+    cursor: pointer;
+    opacity: .5;
+}
+
+
+
+
+
+
