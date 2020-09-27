@@ -26,7 +26,7 @@
                 <a href="#contactUs"><button class="contactUsButton"><p>Contact Us</p></button></a>
             </nav>
          
-<!---- more things to be added here ---->
+<!---- more things to be added here such as for logout and many more .. ---->
     </header>
     <?php  display_message(); ?>
     <div id="signin" class="container">
