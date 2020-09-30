@@ -5,7 +5,7 @@ if(!$con) {
     echo 'Connection Error';
 }
 
-
+// things needed  be added here. 
 
 $companyname =$_POST['companyname'];
 $organizationtype= $_POST['organizationtype'];
