@@ -39,6 +39,18 @@
             <div class = "LocationContentInfoData">
                 <h1>We are here to help you.<br> <br> </h1>
                 <p> Address and phone number of the resturant is provided.<br> Please, contact for them personally, for availability to pick up.<br> Thank you ! <br> <br> <br> <br><br> <br> <br> <br> <br> <br> <br><br><br>  actual google map goes here.....  <br><br> <br> <br> <br> <br> <br><br><br><br><br><br><br><br></p>
+                <script>
+                    function initMap() {
+// The location of Uluru
+var uluru = {lat: -25.344, lng: 131.036};
+// The map, centered at Uluru
+var map = new google.maps.Map(
+document.getElementById('map'), {zoom: 4, center: uluru});
+// The marker, positioned at Uluru
+var marker = new google.maps.Marker({position: uluru, map: map});
+}
+                </script>
+
             </div>
         </div>
     
