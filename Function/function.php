@@ -17,5 +17,13 @@
         }
         else {
             $msg = "";
-        }   
+        }  
+         
+    }
+       //Display Message Function
+       function display_message() {
+        if(isset($_SESSION['Message'])) {
+            echo $_SESSION['Message'];
+            unset($_SESSION['Message']);
+        }
     }
