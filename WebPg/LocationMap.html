@@ -7,6 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RestSave-Resturant-Location</title>
     <link type="text/css" rel="stylesheet" href="../CSS/styles.css">
+    <style>
+        /* Set the size of the div element that contains the map */
+        #map {
+          height: 400px;  /* The height is 400 pixels */
+          width: 100%;  /* The width is the width of the web page */
+         }
+      </style>
 </head>
 
 <body>
@@ -39,16 +46,23 @@
             <div class = "LocationContentInfoData">
                 <h1>We are here to help you.<br> <br> </h1>
                 <p> Address and phone number of the resturant is provided.<br> Please, contact for them personally, for availability to pick up.<br> Thank you ! <br> <br> <br> <br><br> <br> <br> <br> <br> <br> <br><br><br>  actual google map goes here.....  <br><br> <br> <br> <br> <br> <br><br><br><br><br><br><br><br></p>
+                <h3>My Google Maps Demo</h3>
+                <!--The div element for the map -->
+                <div id="map"></div>
                 <script>
-                    function initMap() {
-// The location of Uluru
-var uluru = {lat: -25.344, lng: 131.036};
-// The map, centered at Uluru
-var map = new google.maps.Map(
-document.getElementById('map'), {zoom: 4, center: uluru});
-// The marker, positioned at Uluru
-var marker = new google.maps.Marker({position: uluru, map: map});
-}
+            // Initialize and add the map
+            function initMap() {
+              // The location of Uluru
+              var uluru = {lat: -25.344, lng: 131.036};
+              // The map, centered at Uluru
+              var map = new google.maps.Map(
+                  document.getElementById('map'), {zoom: 4, center: uluru});
+              // The marker, positioned at Uluru
+              var marker = new google.maps.Marker({position: uluru, map: map});
+            }
+                </script>
+                <script defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOqxrHr-NR_2vziigELPnF_hSDJQU8_rM&callback=initMap">
                 </script>
 
             </div>
