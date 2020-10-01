@@ -18,7 +18,7 @@
         else {
             $msg = "";
         }  
-         
+
     }
        //Display Message Function
        function display_message() {
@@ -26,4 +26,14 @@
             echo $_SESSION['Message'];
             unset($_SESSION['Message']);
         }
+    }
+    //Generate Token
+    function Token_Generator() {
+        $token = $_SESSION['token'] = md5(uniqid(mt_rand(), true));
+        return $token;
+    }
+
+    //Send Email Function
+    function send_email($email, $sub, $msg, $header) {
+        return mail($email, $sub, $msg, $header);
     }
