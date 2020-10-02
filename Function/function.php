@@ -61,3 +61,5 @@
             if(strlen($FirstName)<$Min) {
                 $Errors[] = "*First name cannot be less than {$Min} Characters ";
             }
+
+            // still need to work on it. 
