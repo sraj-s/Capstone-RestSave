@@ -42,3 +42,22 @@
     function error_validation($Error) {
         return '<div style="color:red">'.$Error.'</div>';
     }
+    //User Vlidation Function
+    function user_validation() {
+        if($_SERVER['REQUEST_METHOD']=='POST') {
+            $FirstName = clean($_POST['FirstName']);
+            $LastName = clean($_POST['LastName']);
+            $UserName = clean($_POST['UserName']);
+            $Email = clean($_POST['Email']);
+            $Password = clean($_POST['Password']);
+            $CPassword = clean($_POST['CPassword']);
+
+            //echo $FirstName,$LastName,$UserName,$Email,$Password,$CPassword;
+            $Errors = [];
+            $Max = 20;
+            $Min = 02;
+
+            //Check the firstname characters
+            if(strlen($FirstName)<$Min) {
+                $Errors[] = "*First name cannot be less than {$Min} Characters ";
+            }
