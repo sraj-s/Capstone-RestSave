@@ -37,3 +37,8 @@
     function send_email($email, $sub, $msg, $header) {
         return mail($email, $sub, $msg, $header);
     }
+
+    //print error
+    function error_validation($Error) {
+        return '<div style="color:red">'.$Error.'</div>';
+    }
