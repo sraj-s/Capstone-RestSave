@@ -74,4 +74,9 @@
             if(strlen($LastName)>$Max) {
                 $Errors[] = "*Last name cannot be more than {$Max} Characters ";
             }
+
+            //Check the user characters
+            if(!preg_match("/^[a-zA-Z,0-9]*$/", $UserName)) {
+                $Errors[] = "*User name cannot be accept those characters ";
+            }
  
