@@ -88,4 +88,8 @@
             if(user_exists($UserName)) {
                 $Errors[] = "*User name already registered ";
             }
+            //Confirm password
+            if($Password != $CPassword) {
+                $Errors[] = "*Password does not matched ";
+            }
  
