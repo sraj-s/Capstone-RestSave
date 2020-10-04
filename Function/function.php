@@ -110,4 +110,15 @@
             }
         }
     }
+    //Check Email Existence 
+    function email_exists($email) {
+        $sql = "select * from users where Email = '$email'";
+        $result = Query($sql);
+        if(fetch_data($result)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
  
