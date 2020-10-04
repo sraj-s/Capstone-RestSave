@@ -84,4 +84,8 @@
             if(email_exists($Email)) {
                 $Errors[] = "*Email already registered ";
             }
+            //Check the username existence
+            if(user_exists($UserName)) {
+                $Errors[] = "*User name already registered ";
+            }
  
