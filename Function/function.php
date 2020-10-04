@@ -92,4 +92,22 @@
             if($Password != $CPassword) {
                 $Errors[] = "*Password does not matched ";
             }
+
+            if(!empty($Errors)) {
+                foreach($Errors as $Error){
+                    echo error_validation($Error); 
+                }
+            }
+            else {
+                if(user_registration($FirstName, $LastName, $UserName, $Email, $Password)) {
+                    set_message('<p style="color:blue">Register Successfully...Check email</p>');
+                    redirect("../Pages/signin.php");   //TODO TEST HERE
+                }
+                else {
+                    set_message('<p style="color:blue">Register Failed...Pleas try again</p>');
+                    redirect("../Pages/signup.php");    //TODO TEST HERE
+                }
+            }
+        }
+    }
  
