@@ -62,4 +62,16 @@
                 $Errors[] = "*First name cannot be less than {$Min} Characters ";
             }
 
-            // still need to work on it. 
+            if(strlen($FirstName)>$Max) {
+                $Errors[] = "*First name cannot be more than {$Max} Characters ";
+            }
+
+            //Check the lastname characters
+            if(strlen($LastName)<$Min) {
+                $Errors[] = "*Last name cannot be less than {$Min} Characters ";
+            }
+
+            if(strlen($LastName)>$Max) {
+                $Errors[] = "*Last name cannot be more than {$Max} Characters ";
+            }
+ 
