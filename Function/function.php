@@ -79,4 +79,9 @@
             if(!preg_match("/^[a-zA-Z,0-9]*$/", $UserName)) {
                 $Errors[] = "*User name cannot be accept those characters ";
             }
+
+            //Check the mail existence
+            if(email_exists($Email)) {
+                $Errors[] = "*Email already registered ";
+            }
  
