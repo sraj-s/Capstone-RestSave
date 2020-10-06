@@ -188,4 +188,29 @@
             }
         }
     }
+
+    //User Login Validation
+    function login_validation() {
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $UserEmail = clean($_POST['Uemail']);
+            $UserPass = clean($_POST['Upass']);
+            $Remember = isset($_POST['remember']);
+
+            // $Errors = [];
+
+            // if(!empty($Errors)) {
+            //     foreach ($Errors as $Error) {
+            //         echo error_validation($Error);
+            //     }
+            // }
+
+            if(user_login($UserEmail, $UserPass, $Remember)) {
+                redirect("https://drive.google.com/drive/folders/1VHjuMVQsq8nccqJ4WTnj8b1h99Hi6SIp");
+            }
+            else {
+                echo error_validation("*Please enter correct email or password");
+            }
+        }
+
+    }
  
