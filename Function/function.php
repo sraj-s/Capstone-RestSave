@@ -157,7 +157,7 @@
             confirm($result);
 
             $subject = "Active your Life3 Account ";
-            $msg = "Please click the link to active your Life3 account: http://life3.io/login/Pages/activate.php?Email=$Email&Code=$validation_code";
+            $msg = "Please click the link to active your Restsave account: http://Restsave.org/login/Pages/activate.php?Email=$Email&Code=$validation_code";
             $header = "From: no-reply-admin@life3.io";
 
             send_email($email,$subject,$msg,$header);
@@ -180,11 +180,11 @@
                 $sqlquery = "update users set Active='1', Validation_Code='0' where Email='$Email' and Validation_Code='$Code'";
                 $result2 = Query($sqlquery);
                 confirm($result2);
-                set_message('<p style="color:blue">Your Life3 account has been activated.</p>');
+                set_message('<p style="color:blue">Your RestSave account has been activated.</p>');
                 redirect('signin.php');
             }
             else {
-                echo '<p style="color:red">Your Life3 account has not been activated.</p>';
+                echo '<p style="color:red">Your Restsave account has not been activated.</p>';
             }
         }
     }
