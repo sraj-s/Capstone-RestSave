@@ -165,4 +165,27 @@
             return true;
         }
     }
+
+    //Activation
+    function activation() {
+        if($_SERVER['REQUEST_METHOD']=="GET") {
+            $Email = $_GET['Email'];
+            $Code = $_GET['Code'];
+
+            $sql = "select * from users where Email='$Email' and Validation_Code='$Code'";
+            $result = Query($sql);
+            confirm($result);
+
+            if(fetch_data($result)) {
+                $sqlquery = "update users set Active='1', Validation_Code='0' where Email='$Email' and Validation_Code='$Code'";
+                $result2 = Query($sqlquery);
+                confirm($result2);
+                set_message('<p style="color:blue">Your Life3 account has been activated.</p>');
+                redirect('signin.php');
+            }
+            else {
+                echo '<p style="color:red">Your Life3 account has not been activated.</p>';
+            }
+        }
+    }
  
