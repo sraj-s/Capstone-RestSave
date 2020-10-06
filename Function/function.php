@@ -133,4 +133,36 @@
             return false;
         }
     }
+
+    //User Registration Function
+    function user_registration($FName, $LName, $UName, $email, $pass) {
+        $FirstName = escape($FName);
+        $LastName = escape($LName);
+        $UserName = escape($UName);
+        $Email = escape($email);
+        $Pass = escape($pass);
+
+        if(email_exists($Email)) {
+            return true;
+        } else if(user_exists($UserName)) {
+            return true;
+        } else {
+            $Password = md5($Pass);
+            $validation_code = md5($UserName.microtime());
+
+            $sql = "insert into users (FirstName, LastName, UserName, Email, Password, Validation_Code, Active)
+            values ('$FirstName','$LastName','$UserName','$Email','$Password','$validation_code','0')";
+
+            $result = Query($sql);
+            confirm($result);
+
+            $subject = "Active your Life3 Account ";
+            $msg = "Please click the link to active your Life3 account: http://life3.io/login/Pages/activate.php?Email=$Email&Code=$validation_code";
+            $header = "From: no-reply-admin@life3.io";
+
+            send_email($email,$subject,$msg,$header);
+
+            return true;
+        }
+    }
  
