@@ -121,4 +121,16 @@
             return false;
         }
     }
+
+    //Check UserName Existence 
+    function user_exists($user) {
+        $sql = "select * from users where UserName = '$user'";
+        $result = Query($sql);
+        if(fetch_data($result)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
  
