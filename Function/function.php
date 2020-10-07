@@ -273,7 +273,7 @@
                     Query($sql);
 
                     $subject = "Please reset your Life3 account password";
-                    $message = "Please click the link to reset your password: .... Your code is: {$code} http://life3.io/login/Pages/code.php?Email=$email&Code=$code";
+                    $message = "Please click the link to reset your password: .... Your code is: {$code} http://Restsave.org/login/Pages/code.php?Email=$email&Code=$code";
                     $header = "From: no-reply-admin@life3.io";
 
                     if(send_email($email,$subject,$message,$header)) {
