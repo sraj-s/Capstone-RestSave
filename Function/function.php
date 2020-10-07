@@ -259,4 +259,37 @@
         return false;
     }
 
+    /**************Recover Function************** */
+    function recover_password() {
+        if($_SERVER['REQUEST_METHOD'] == "POST") {
+            if(isset($_SESSION['token']) && $_POST['token'] == $_SESSION['token']) {
+                $email = $_POST['UserEmail'];
+
+                if(email_exists($email)) {
+                    $code = md5($email.microtime());
+                    setcookie('temp_code',$code,time()+86400);
+
+                    $sql = "update users set Validation_Code='$code' where Email='$email'";
+                    Query($sql);
+
+                    $subject = "Please reset your Life3 account password";
+                    $message = "Please click the link to reset your password: .... Your code is: {$code} http://life3.io/login/Pages/code.php?Email=$email&Code=$code";
+                    $header = "From: no-reply-admin@life3.io";
+
+                    if(send_email($email,$subject,$message,$header)) {
+                        echo '<div style="color:blue">Please check your email.</div>';
+                    } else {
+                        echo error_validation("*Sending failed...");
+                    }
+
+                } else {
+                    echo error_validation("*Email not found...");
+                }
+            }
+            else {
+                redirect("signin.php");
+            }
+        }
+    }
+
  
