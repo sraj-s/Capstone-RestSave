@@ -238,4 +238,25 @@
         }
 
     }
+
+    //log in check
+    function user_login($Uemail, $Upass, $Remember) {
+        $query = "select * from users where Email='$Uemail' and Active='1'";
+        $result = Query($query);
+
+        if($row=fetch_data($result)) {
+            $db_pass = $row['Password'];
+            if(md5($Upass) == $db_pass) {
+                if($Remember == true) {
+                    setcookie('email', $Uemail, time() + 86400);
+                }
+                $_SESSION['Email'] = $Uemail; 
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return false;
+    }
+
  
