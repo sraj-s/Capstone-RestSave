@@ -322,8 +322,8 @@
             redirect("recover.php");
         }
     }
-
     // still need to work on Rest password 
 
+?>
 
  
