@@ -292,4 +292,35 @@
         }
     }
 
+    //Validation Code
+    function validation_code() {
+        if(isset($_COOKIE['temp_code'])) {
+            if(!isset($_GET['Email']) && !isset($_GET['Code'])) {
+                redirect('signin.php');
+            } else if(empty($_GET['Email']) && empty($_GET['Code'])) {
+                redirect("signin.php");
+            } else {
+                if(isset($_POST['recover-code'])) {
+                    $code = $_POST['recover-code'];
+                    $email = $_GET['Email'];
+
+                    $query = "select * from users where Validation_Code='$code' and Email='$email'";
+                    $result = Query($query);
+
+                    if(fetch_data($result)) {
+                        setcookie('temp_code',$code,time()+86400);
+                        redirect("reset.php?Email=$email&Code=$code");
+                    }
+                    else {
+                        echo error_validation("*Query failed...");
+                    }
+                }
+            }
+
+        } else {
+            set_message('<div style="color:red">*Your code has been expired.</div>');
+            redirect("recover.php");
+        }
+    }
+
  
