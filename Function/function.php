@@ -330,6 +330,8 @@
                 if(isset($_SESSION['token']) && isset($_POST['token'])) {
                     if($_SESSION['token'] == $_POST['token']) {
                         if($_POST['password'] == $_POST['confirm-password']) {
+                            $password = md5($_POST['password']);
+                            $email = $_GET['Email'];
     // still need to work on Rest password 
 
 ?>
