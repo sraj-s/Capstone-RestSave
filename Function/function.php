@@ -322,6 +322,14 @@
             redirect("recover.php");
         }
     }
+
+    //Reset password
+    function reset_password() {
+        if(isset($_COOKIE['temp_code'])) {
+            if(isset($_GET['Email']) && isset($_GET['Code'])) {
+                if(isset($_SESSION['token']) && isset($_POST['token'])) {
+                    if($_SESSION['token'] == $_POST['token']) {
+                        if($_POST['password'] == $_POST['confirm-password']) {
     // still need to work on Rest password 
 
 ?>
