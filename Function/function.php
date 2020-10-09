@@ -332,6 +332,8 @@
                         if($_POST['password'] == $_POST['confirm-password']) {
                             $password = md5($_POST['password']);
                             $email = $_GET['Email'];
+                            $query = "update users set Password='$password', Validation_Code='0' where Email='$email'";
+                            $result = Query($query);
     // still need to work on Rest password 
 
 ?>
