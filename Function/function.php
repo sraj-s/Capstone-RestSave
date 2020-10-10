@@ -334,7 +334,10 @@
                             $email = $_GET['Email'];
                             $query = "update users set Password='$password', Validation_Code='0' where Email='$email'";
                             $result = Query($query);
+                            set_message('<div style="color:blue">*Password has been updated</div>');
+
     // still need to work on Rest password 
+
 
 ?>
 
