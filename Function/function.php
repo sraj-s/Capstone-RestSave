@@ -336,6 +336,7 @@
                             $result = Query($query);
                             set_message('<div style="color:blue">*Password has been updated</div>');
                             if($result) {
+                                set_message('<div style="color:blue">*Password has been updated</div>');
 
     // still need to work on Rest password 
 
