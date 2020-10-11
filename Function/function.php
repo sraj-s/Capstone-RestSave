@@ -337,6 +337,8 @@
                             set_message('<div style="color:blue">*Password has been updated</div>');
                             if($result) {
                                 set_message('<div style="color:blue">*Password has been updated</div>');
+                                echo'<p>*Password has been updated</p>';
+                                redirect("signin.php");
 
     // still need to work on Rest password 
 
