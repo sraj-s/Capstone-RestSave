@@ -342,6 +342,9 @@
                             } else {
                                 set_message('<div style="color:red">*something went wrong...</div>');
                             }
+                            } else {
+                            set_message('<div style="color:red">*Password not matched</div>');
+                            }
 
     // still need to work on Rest password 
 
