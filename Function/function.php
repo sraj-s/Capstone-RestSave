@@ -345,6 +345,9 @@
                             } else {
                             set_message('<div style="color:red">*Password not matched</div>');
                             }
+                        } else {
+                            set_message('<div style="color:red">*Code/Email did not match</div>');
+                        }
 
     // still need to work on Rest password 
 
