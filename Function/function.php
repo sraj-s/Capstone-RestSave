@@ -350,6 +350,8 @@
                         }
                     } else {
                         set_message('<div style="color:red">*Time(5 mins) is up...</div>');
+                    }
+                }
 
     // still need to work on Rest password 
 
