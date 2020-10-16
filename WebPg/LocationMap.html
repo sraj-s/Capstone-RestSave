@@ -35,7 +35,6 @@
         </div>
     </header>
 
-
     <main>     
             
         <div class="LocationContent">
@@ -52,46 +51,19 @@
                 <script>
             // Initialize and add the map
             function initMap() {
-                map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 2,
-          center: new google.maps.LatLng(2.8,-187.3),
-          mapTypeId: 'terrain'
-        });
               // The location of Uluru
-            //   var uluru = {lat: 40.819755, lng: -73.950367};
-            //   // The map, centered at Uluru
-            //   var map = new google.maps.Map(
-            //       document.getElementById('map'), {zoom: 16, center: uluru});
-            //   // The marker, positioned at Uluru
-            //   var marker = new google.maps.Marker({position: uluru, map: map});
-            // };
-
-        // Create a <script> tag and set the USGS URL as the source.
-        var script = document.createElement('script');
-        // This example uses a local copy of the GeoJSON stored at
-        // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-        script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
-        document.getElementsByTagName('head')[0].appendChild(script);
-      }
-
-      // Loop through the results array and place a marker for each
-      // set of coordinates.
-      window.eqfeed_callback = function(results) {
-        for (var i = 0; i < results.features.length; i++) {
-          var coords = results.features[i].geometry.coordinates;
-          var latLng = new google.maps.LatLng(coords[1],coords[0]);
-          var marker = new google.maps.Marker({
-            position: latLng,
-            map: map
-          });
-        }
-      }
-
+              var uluru = {lat: 40.819755, lng: -73.950367};
+              // The map, centered at Uluru
+              var map = new google.maps.Map(
+                  document.getElementById('map'), {zoom: 16, center: uluru});
+              // The marker, positioned at Uluru
+              var marker = new google.maps.Marker({position: uluru, map: map});
+            }
 
 
                 </script>
                 <script defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOqxrHr-NR_2vziigELPnF_hSDJQU8_rM&callback=initMap" >
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOqxrHr-NR_2vziigELPnF_hSDJQU8_rM&libraries=places&callback=initMap" >
                 </script>
 
             </div>
