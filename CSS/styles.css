@@ -458,6 +458,49 @@ footer .socialMediaContainer .socialMediaIcon:hover {
     opacity: .5;
 }
 
+/*  for comment section */
+
+.commentBox{
+    padding: 1%;
+    width:96%;
+    border:1px solid #000;
+    background-color:#f0f0f0;
+    margin-bottom: 10px;
+ }
+  
+ .leftPanelImg{
+    width:10%;
+    float:left;
+ }
+  
+ .leftPanelImg img{
+    border-radius: 100%;
+ }
+  
+ .rightPanel{
+    width: 85%;
+    float:left;
+    margin-left: 1%;
+ }
+  
+ .clear{
+    clear:both;
+ }
+  
+ .form{
+    padding:10px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    text-align:center ;
+ }
+  
+ .form input[type="text"], .form textarea, .form input [type="date"]
+ {
+    border: 1px solid #000;
+    padding: 2px;
+    width:300px;
+ }
+ 
 
 
 
