@@ -16,5 +16,5 @@
           </div>
       </form>
 </div>
-
+<!---more things to be added here----- !>
 <?php require_once('../includes/footer.php') ?>
