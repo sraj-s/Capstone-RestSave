@@ -17,16 +17,17 @@
         }
         else {
             $msg = "";
-        }  
-
+        }   
     }
-       //Display Message Function
-       function display_message() {
+
+    //Display Message Function
+    function display_message() {
         if(isset($_SESSION['Message'])) {
             echo $_SESSION['Message'];
             unset($_SESSION['Message']);
         }
     }
+
     //Generate Token
     function Token_Generator() {
         $token = $_SESSION['token'] = md5(uniqid(mt_rand(), true));
@@ -38,10 +39,14 @@
         return mail($email, $sub, $msg, $header);
     }
 
+
+    //**********User Validation Functions********** */ 
+
     //print error
     function error_validation($Error) {
         return '<div style="color:red">'.$Error.'</div>';
     }
+
     //User Vlidation Function
     function user_validation() {
         if($_SERVER['REQUEST_METHOD']=='POST') {
@@ -84,10 +89,12 @@
             if(email_exists($Email)) {
                 $Errors[] = "*Email already registered ";
             }
+
             //Check the username existence
             if(user_exists($UserName)) {
                 $Errors[] = "*User name already registered ";
             }
+
             //Confirm password
             if($Password != $CPassword) {
                 $Errors[] = "*Password does not matched ";
@@ -101,15 +108,16 @@
             else {
                 if(user_registration($FirstName, $LastName, $UserName, $Email, $Password)) {
                     set_message('<p style="color:blue">Register Successfully...Check email</p>');
-                    redirect("../Pages/signin.php");   //TODO TEST HERE
+                    redirect("../WebPg/signin.php");   //TODO TEST HERE
                 }
                 else {
                     set_message('<p style="color:blue">Register Failed...Pleas try again</p>');
-                    redirect("../Pages/signup.php");    //TODO TEST HERE
+                    redirect("../WebPg/signup.php");    //TODO TEST HERE
                 }
             }
         }
     }
+
     //Check Email Existence 
     function email_exists($email) {
         $sql = "select * from users where Email = '$email'";
@@ -156,9 +164,9 @@
             $result = Query($sql);
             confirm($result);
 
-            $subject = "Active your Life3 Account ";
-            $msg = "Please click the link to active your Restsave account: http://Restsave.org/login/Pages/activate.php?Email=$Email&Code=$validation_code";
-            $header = "From: no-reply-admin@life3.io";
+            $subject = "Active your Restsave Account ";
+            $msg = "Please click the link to active your Restsave account: http://RestSave.org/login/WebPg/activate.php?Email=$Email&Code=$validation_code";
+            $header = "From: no-reply-admin@RestSave.org";
 
             send_email($email,$subject,$msg,$header);
 
@@ -184,7 +192,7 @@
                 redirect('signin.php');
             }
             else {
-                echo '<p style="color:red">Your Restsave account has not been activated.</p>';
+                echo '<p style="color:red">Your RestSave account has not been activated.</p>';
             }
         }
     }
@@ -205,32 +213,7 @@
             // }
 
             if(user_login($UserEmail, $UserPass, $Remember)) {
-                redirect("https://drive.google.com/drive/folders/1VHjuMVQsq8nccqJ4WTnj8b1h99Hi6SIp");
-            }
-            else {
-                echo error_validation("*Please enter correct email or password");
-            }
-        }
-
-    }
-
-    //User Login Validation
-    function login_validation() {
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $UserEmail = clean($_POST['Uemail']);
-            $UserPass = clean($_POST['Upass']);
-            $Remember = isset($_POST['remember']);
-
-            // $Errors = [];
-
-            // if(!empty($Errors)) {
-            //     foreach ($Errors as $Error) {
-            //         echo error_validation($Error);
-            //     }
-            // }
-
-            if(user_login($UserEmail, $UserPass, $Remember)) {
-                redirect("https://drive.google.com/drive/folders/1VHjuMVQsq8nccqJ4WTnj8b1h99Hi6SIp");
+                redirect("https://drive.google.com/drive/folders/1VHjuMVQsq8nccqJ4WTnj8b1h99Hi6SI");
             }
             else {
                 echo error_validation("*Please enter correct email or password");
@@ -273,8 +256,8 @@
                     Query($sql);
 
                     $subject = "Please reset your Life3 account password";
-                    $message = "Please click the link to reset your password: .... Your code is: {$code} http://Restsave.org/login/Pages/code.php?Email=$email&Code=$code";
-                    $header = "From: no-reply-admin@life3.io";
+                    $message = "Please click the link to reset your password: .... Your code is: {$code} http://RestSave.org/login/Pages/code.php?Email=$email&Code=$code";
+                    $header = "From: no-reply-admin@restSave.org";
 
                     if(send_email($email,$subject,$message,$header)) {
                         echo '<div style="color:blue">Please check your email.</div>';
@@ -334,6 +317,7 @@
                             $email = $_GET['Email'];
                             $query = "update users set Password='$password', Validation_Code='0' where Email='$email'";
                             $result = Query($query);
+
                             set_message('<div style="color:blue">*Password has been updated</div>');
                             if($result) {
                                 set_message('<div style="color:blue">*Password has been updated</div>');
@@ -342,17 +326,24 @@
                             } else {
                                 set_message('<div style="color:red">*something went wrong...</div>');
                             }
-                            } else {
-                            set_message('<div style="color:red">*Password not matched</div>');
-                            }
+
                         } else {
-                            set_message('<div style="color:red">*Code/Email did not match</div>');
+                            set_message('<div style="color:red">*Password not matched</div>');
                         }
-                    } else {
-                        set_message('<div style="color:red">*Time(5 mins) is up...</div>');
-                    }
-                }
+                    } 
+                    // else {
+                    //     set_message('<div style="color:red">*Invalid code1</div>');
+                    // }
+                } 
+                // else {
+                //     set_message('<div style="color:red">*Invalid code2</div>');
+                // }
 
+            } else {
+                set_message('<div style="color:red">*Code/Email did not match</div>');
+            }
+        } else {
+            set_message('<div style="color:red">*Time(5 mins) is up...</div>');
+        }
+    }
 ?>
-
- 

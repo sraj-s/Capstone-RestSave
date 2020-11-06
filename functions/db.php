@@ -1,6 +1,6 @@
 <?php
 
-    $con = mysqli_connect('localhost', 'root', 'root', 'root');
+    $con = mysqli_connect('localhost', 'samrat', 'samrat', 'RestSaveLogin');
 
     if(!$con) {
         echo 'Connection Error';

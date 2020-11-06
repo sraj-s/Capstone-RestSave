@@ -7,26 +7,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Rest-Save sign-in  page</title>
+    <title>Rest-Save</title>
     <link type="text/css" rel="stylesheet" href="../CSS/styles.css">
     
   </head>
 
 <body>
   <header style="height: 0;">
+  <!--
     <video autoplay muted loop style="position: fixed; right: 0; bottom: 0;
     min-width: 100%; min-height: 100%; z-index:-1;">
         <source  src="../RestSaveImages/PagesImg/lake.mp4">     
     </video>
+-->
         <nav class="navBar" id="navbar">
-                <a class="navLink navLogo" href="."><img src="RestSaveImages/FrontImages/logo.png" alt="Rest-Save Logo"
+                <a class="navLink navLogo" href="."><img src="../RestSaveImages/FrontImages/logo.png" alt="Rest-Save Logo"
                             title="Rest-Save"></img></a>
                             <a class="navLink navLinkText" href="WebPg/Posting.html">Posting</a>
                 <a class="navLink navLinkText" href="WebPg/LocationMap.html">Location</a>
+                <a class="navLink navLinkText" href="WebPg/signin.php">Sign In</a>
                 <a href="#contactUs"><button class="contactUsButton"><p>Contact Us</p></button></a>
+                
             </nav>
          
-<!---- more things to be added here such as for logout and many more .. ---->
+
     </header>
     <?php  display_message(); ?>
     <div id="signin" class="container">
@@ -34,7 +38,7 @@
         
           <?php login_validation();
                 display_message(); ?>
-          <h1>Restsave Member Sign in</h1>
+          <h1><br><br>Restsave Member Sign in<br><br></h1>
           <!-- <hr> -->
           <label for="useremail"><b>User email</b></label>
           <input type="text" placeholder="Enter user email" name="Uemail" required>

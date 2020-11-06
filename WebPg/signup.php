@@ -7,7 +7,7 @@
   <form method="post">
           <?php user_validation();
                 display_message(); ?>
-          <h1>Restsave Member Sign Up</h1>
+          <h1>RestSave Member Sign Up</h1>
           <!-- <hr> -->
           
           <label for="firstname"><b>First Name</b></label>

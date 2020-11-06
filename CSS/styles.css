@@ -160,7 +160,29 @@ header .contactUsButton {
  header .contactUsButton .fa-envelope-open-text {
     display: none;
 } 
+/*
+header .SignInButton {
+    right: 9%; 
+    position: absolute;
+    z-index: 3;
+    top: 20%;
+    width: 13vw;
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid white;
+    background-color: rgb(211, 221, 64);
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    text-transform: uppercase;
+    margin: 5px;
+}
 
+ header .SignInButton .fa-envelope-open-text {
+    display: none;
+} 
+
+*/
 
 .banner {
     width: 50%;
@@ -459,6 +481,10 @@ footer .socialMediaContainer .socialMediaIcon:hover {
 }
 
 /*  for comment section */
+
+.commentSection{
+    text-align:center;
+}
 
 .commentBox{
     padding: 1%;
